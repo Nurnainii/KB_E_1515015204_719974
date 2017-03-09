@@ -1,0 +1,18 @@
+PREDICATES
+nondeterm dia_suka(symbol, symbol)
+nondeterm human(symbol)
+nondeterm buah(symbol)
+dijual(symbol)
+
+CLAUSES
+dia_suka(X,Y):-human(X),
+buah(Y),
+dijual(Y).
+human(nur).
+human(yudi).
+buah(pepaya).
+buah(kelapa).
+dijual(pepaya).
+dijual(kelapa).
+GOAL
+dia_suka(yudi,kelapa).
