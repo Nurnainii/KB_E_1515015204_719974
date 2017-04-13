@@ -1,0 +1,19 @@
+DOMAINS 					%pendeklarasikan jenis parameter yang akan digunakan*/
+integerlist = integer*  			%pada domain tersebut diberikan tanda asteriks(*) berarti menunjukkan bahwa ini bertipe list
+
+PREDICATES 					/*Berisi daftar deklarasi nama yg akan digunakan*/
+tambah(integerlist,integerlist,integerlist)	%parameter isiannya adalah semuanya integerlist, maka
+ 					     	%isian parameter tersebut semuanya adalah sebuah list
+	
+
+CLAUSES 					%berisi aturan dan fakta yang nanti digunakan
+tambah([],List,List). 				%disini terdapat sebuah paramater kosong yang artinya bahwa parameter tersebut bisa digunakan kapan saja
+
+tambah([H|L1],List2,[H|L5]):-   		%lalu bentuk list diatas tadi kita dapat pecahkan menjadi sebuah list yang ekuivalen
+tambah(L1,List2,L5).  				%disini bahwa L5 tidak memiliki sebuah vertical bar "|" sehingga akan dianggap sebuah tail
+         	      				%sedangkan yang lainnya memliki vertikal bar
+
+GOAL 						%tujuan akhir pada program dimana menampilkan hasil output
+tambah([1,2,3],[5,6],L).  			%dan di goal ini akan menampilkan dimana [1,2,3] itu sebagai L1 dan [5,6] merupakan List2
+ 						%dan dimana 1 itu merupakan head dan 2,3 adlah tail, ini berlaku juga pada list yang kedua. maka tampilan terkhir adalah [1,2,3,5,6]
+ 
